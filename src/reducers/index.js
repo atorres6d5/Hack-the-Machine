@@ -3,5 +3,5 @@ import { combineReducers } from 'redux'
 
 
 export default combineReducers({
-  reducer:()=>null
+  homeReducer: require('./homeReducer.js')
 })
