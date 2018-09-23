@@ -5,13 +5,15 @@
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
 }
-
 body {
-  background-image: url('../images/shipbackground.jpg');
-  background-color: white;
   font-family: Arial, Helvetica, sans-serif;
-  color: black;
-  opacity: 0.94;
+  opacity: 0.9;
+  background-image: url('../images/shipbackground.jpg');
+  background-repeat: no-repeat;
+
+  background-position: center;
+
+  background-size: cover;
 }
 h8 {
   font-size: 30px;
@@ -30,11 +32,17 @@ h4 {
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
   font-size: 300px;
-  color: white;
+  color: #3a3e44;
 }
 
 .help {
-  color: white !important;
+  color: #3a3e44 !important;
+  text-decoration: underline;
+}
+
+.about {
+  color: #3a3e44 !important;
+  text-decoration: underline;
 }
 
 h6 {
