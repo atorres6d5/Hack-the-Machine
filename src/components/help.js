@@ -55,7 +55,9 @@ export default class help extends Component {
         {/* Help  */}
 
         <h6>
-          <b className="help">Need help?</b>
+          <div>
+            <b className="help">Need help? </b>
+          </div>
           Connecting with confidential help as a service dispatcher is simple
           with Military ALDO. You can recieve help anytime, 24/7. You can
           recieve direct help via either our live chat room or toll free phone

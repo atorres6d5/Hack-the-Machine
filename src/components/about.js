@@ -53,7 +53,7 @@ export default class about extends Component {
 
         <h6>
           <div>
-            <b className="help">About ALDO</b>
+            <b className="about">About ALDO</b>
           </div>
           The Military Navy Aldo portal provides access to Service-specific
           resources for dispatchers to improve search and rescue operations. To
