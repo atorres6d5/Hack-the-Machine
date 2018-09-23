@@ -53,6 +53,8 @@ export default class home extends Component {
           />
         </Menu>
         {/* Header Logo */}
+
+        <h4>ALDO</h4>
       </div>
     );
   }
