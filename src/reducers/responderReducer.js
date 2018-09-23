@@ -1,12 +1,14 @@
 import {
     GET_RESPONDERS_SUCCESS,
     GET_RESPONDERS_FAIL,
-    ATTEMPT_GET_RESPONDERS
+    ATTEMPT_GET_RESPONDERS,
+    RESPONDERS_LATLONG
     } from '../actions/types.js'
     
     const INITIAL_STATE = {
         responders: [],
-        loading: false
+        loading: false,
+        responders_latlong:[]
     }
     
     
@@ -20,6 +22,8 @@ import {
           return{ ...state, responders:[action.payload], loading: false}
         case GET_RESPONDERS_FAIL:
           return{ ...state, loading: false }
+        case RESPONDERS_LATLONG:
+          return {...state, responders_latlong: action.payload}
     
         default:
           return state

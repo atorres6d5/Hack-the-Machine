@@ -1,11 +1,14 @@
 import {
   RETURN_HOME,
   ATTEMPT_GET_RESPONDERS,
-  RETURN_DISPATCH_SUCCESS
+  RETURN_DISPATCH_SUCCESS,
+  RESPONDERS_LATLONG
 } from './types.js';
 import axios from 'axios';
 import responders from '../json/responder_location.json';
 import service_calls from '../sampledata/service_calls.json';
+
+const URL = 'http://localhost:8080/get/'
 
 // Return Home
 export const returnHome = event => {
@@ -26,6 +29,13 @@ export const returnDispatch = event => {
 
 // Return First Responder Information
 export const getResponders = () => {
+  axios.get(`${URL}latlongs`)
+  .then(result=>{
+    return {
+      type: RESPONDERS_LATLONG,
+      payload: result.data
+    }
+  })
   console.log(JSON.stringify(responders));
   return {
     type: ATTEMPT_GET_RESPONDERS,
