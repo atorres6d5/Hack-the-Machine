@@ -7,7 +7,6 @@ import {getResponders} from '../actions/index'
 class Responders extends Component {
 
   render() {
-      console.log(this.props)
     return (
       <div className="Responders">
         <h1>Responders</h1>

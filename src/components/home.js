@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import ReactTable from "react-table"
+import { withRouter } from 'react-router'
+
 
 
 class Home extends Component {
@@ -12,9 +12,9 @@ class Home extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <a className="App-intro" onClick={()=>this.props.history.push('/Responders')}>
+          <h1 className="App-title">Super secret page...do not read</h1>
+        </a>
       </div>
     );
   }
@@ -23,10 +23,5 @@ class Home extends Component {
 
 
 
-const mapStateToProps = (props) =>{
-  const { user, projects, reviews } = props.home
 
-  return { user, projects, reviews}
-}
-
-export default withRouter(connect(mapStateToProps, {})(Home));
+export default Home;

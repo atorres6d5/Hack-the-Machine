@@ -1,32 +1,27 @@
-import React from 'react';
-import App from '../App.js';
-import Responders from './responders';
-import { Provider } from 'react-redux';
-//import { Route, Switch, Redirect } from 'react-router'
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import Home from './home.js';
+// import App from '../App.js'
+import Responders from './responders.js';
 import Dispatch from '../containers/Dispatch/Dispatch';
+import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router';
+import '../index.css';
 
-const Root = ({ store, history }) => {
-  return (
-    <Provider store={store}>
-      <ConnectedRouter history={history}>
-        <div>
+class Root extends Component {
+  render() {
+    return (
+      <Provider store={this.props.store}>
+        <ConnectedRouter history={this.props.history}>
           <Switch>
-            <Route exact path="/Dispatch" component={Dispatch} />
             <Route exact path="/Responders" component={Responders} />
-
-            <Route path="/" component={App} />
+            <Route exact path="/Dispatch" component={Dispatch} />
+            <Route path="/" component={Home} />
           </Switch>
-        </div>
-      </ConnectedRouter>
-    </Provider>
-  );
-};
-
-Root.propTypes = {
-  store: PropTypes.object.isRequired
-};
+        </ConnectedRouter>
+      </Provider>
+    );
+  }
+}
 
 export default Root;
