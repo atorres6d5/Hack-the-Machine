@@ -1,19 +1,21 @@
-import {
-  RETURN_HOME
-} from "./types.js"
-import axios from 'axios'
+import { RETURN_HOME, RETURN_DISPATCH_SUCCESS } from './types.js';
+import { push } from 'react-router-redux';
+import axios from 'axios';
+import service_calls from '../sampledata/service_calls.json';
 
-import { push } from 'react-router-redux'
-import axios from "axios"
-
-
-export const returnHome = ( event ) => {
+export const returnHome = event => {
   return {
     type: RETURN_HOME,
     payload: event
-  }
-}
+  };
+};
 
-export const requestData = ( event )=>{
+export const returnDispatch = event => {
+  console.log(service_calls);
+  return {
+    type: RETURN_DISPATCH_SUCCESS,
+    payload: service_calls
+  };
+};
 
-}
+export const requestData = event => {};

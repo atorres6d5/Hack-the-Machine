@@ -1,7 +1,8 @@
-import { combineReducers } from 'redux'
-
-
+import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
 
 export default combineReducers({
-  homeReducer: require('./homeReducer.js')
-})
+  routing: routerReducer,
+  homeReducer: require('./homeReducer.js'),
+  dispatchReducer: require('./dispatchReducer.js')
+});
