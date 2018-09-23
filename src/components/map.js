@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import RespondersTable from './RespondersTable';
 import { getResponders } from '../actions/index';
+import { WebMap } from 'react-arcgis';
 import { Menu } from 'semantic-ui-react';
 
 export default class map extends Component {
@@ -50,6 +51,15 @@ export default class map extends Component {
             onClick={() => this.props.history.push('/Help')}
           />
         </Menu>
+        <div style={{ width: '100vw', height: '100vh' }}>
+                <WebMap
+                    id="b834a68d7a484c5fb473d4ba90d35e71" //This needs to change to our map id once we validate our app with esri
+                    viewProperties={{
+                        center: [-90.0800, 29.9700],
+                        zoom: 12
+                    }}
+                />
+            </div>
       </div>
     );
   }
