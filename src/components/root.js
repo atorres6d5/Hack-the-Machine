@@ -1,23 +1,14 @@
 import React from 'react';
 import App from '../App.js'
+import Responders from './responders'
 import { Provider } from 'react-redux'
-import { Route, Switch, Redirect } from 'react-router'
+//import { Route, Switch, Redirect } from 'react-router'
 import PropTypes from 'prop-types'
 import { ConnectedRouter } from 'connected-react-router'
+import { Route, Switch} from 'react-router-dom'
 
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route {...rest} render={ props => ( localStorage.getItem('Token') ?(
-    <Component {...props}/>) : (
-    <Redirect to={{
-        pathname: '/',
-        state: {
-          from: props.location
-        }
-      }} />
-    )
-    )} />
-  )
+
 
 
 const Root = ({ store, history }) => {
@@ -26,6 +17,7 @@ const Root = ({ store, history }) => {
       <ConnectedRouter history={history}>
         <div>
           <Switch>
+            <Route exact path="/Responders" component={Responders}/>
             <Route path="/" component={App} />
           </Switch>
         </div>
@@ -41,4 +33,4 @@ Root.propTypes = {
 }
 
 
-export default Root
+export default Root;
