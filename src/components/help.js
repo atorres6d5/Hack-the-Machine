@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import RespondersTable from './RespondersTable';
 import { getResponders } from '../actions/index';
 import { Menu } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 
 export default class help extends Component {
   state = { activeItem: 'Help' };
@@ -50,6 +51,21 @@ export default class help extends Component {
             onClick={() => this.props.history.push('/Help')}
           />
         </Menu>
+
+        {/* Help  */}
+
+        <h6>
+          <b className="help">Need help?</b>
+          The Military Navy Aldo portal provides access to Service-specific
+          news, resources, and social media tools with one simple click. To
+          locate policies, procedures, timely articles, cutting edge social
+          media tools, and support, explore Military Navy Aldo.
+          <div className="btnpad">
+            <button size="massive" class="ui black button">
+              <h8> Contact </h8>
+            </button>
+          </div>
+        </h6>
       </div>
     );
   }
