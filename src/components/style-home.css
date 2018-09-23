@@ -5,3 +5,34 @@
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
 }
+
+body {
+  background-image: url('../images/shipbackground.jpg');
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+.padded {
+  padding-bottom: 80px;
+}
+
+h1 {
+  font-size: 40px;
+  left: 50%;
+  top: 10%;
+  padding-top: 50px;
+  position: fixed;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+h3 {
+  padding-top: 50px;
+  font-size: 20px;
+}
+
+p {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}

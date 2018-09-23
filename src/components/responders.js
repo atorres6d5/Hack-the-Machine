@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import RespondersTable from './RespondersTable';
 import { getResponders } from '../actions/index';
 import { Menu } from 'semantic-ui-react';
+import './style-home.css';
 
 class Responders extends Component {
   state = { activeItem: 'Responders' };
@@ -53,10 +54,10 @@ class Responders extends Component {
           />
         </Menu>
 
-        <div className="Responders">
+        <p>
           <h1>Responders</h1>
-          <RespondersTable />
-        </div>
+        </p>
+        <RespondersTable />
       </div>
     );
   }

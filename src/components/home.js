@@ -52,12 +52,7 @@ export default class home extends Component {
             onClick={() => this.props.history.push('/Help')}
           />
         </Menu>
-
         {/* Header Logo */}
-        <img
-          className="centered-logo"
-          src={require('../images/emergency.png')}
-        />
       </div>
     );
   }
