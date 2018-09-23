@@ -4,15 +4,12 @@ import { withRouter } from 'react-router-dom';
 import RespondersTable from './RespondersTable';
 import { getResponders } from '../actions/index';
 import { Menu } from 'semantic-ui-react';
-import './style-home.css';
 
-class Responders extends Component {
-  state = { activeItem: 'Responders' };
+export default class about extends Component {
+  state = { activeItem: 'About' };
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
   render() {
     const { activeItem } = this.state;
-
     return (
       <div>
         {/* // Menu */}
@@ -53,25 +50,7 @@ class Responders extends Component {
             onClick={() => this.props.history.push('/Help')}
           />
         </Menu>
-
-        <p>
-          <h1>Responders</h1>
-        </p>
-        <RespondersTable />
       </div>
     );
   }
 }
-
-const mapStateToProps = props => {
-  const { responderObjects } = props.responderReducer;
-
-  return { responderObjects };
-};
-
-export default withRouter(
-  connect(
-    mapStateToProps,
-    { getResponders }
-  )(Responders)
-);
