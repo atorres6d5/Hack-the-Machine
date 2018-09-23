@@ -50,6 +50,21 @@ export default class about extends Component {
             onClick={() => this.props.history.push('/Help')}
           />
         </Menu>
+
+        <h6>
+          <div>
+            <b className="help">About ALDO</b>
+          </div>
+          The Military Navy Aldo portal provides access to Service-specific
+          resources for dispatchers to improve search and rescue operations. To
+          locate available responders, contact information, those in need in the
+          area, and support; please refer to the menu.
+          <div className="btnpad">
+            <button size="massive" class="ui black button">
+              <h8> Learn More Here </h8>
+            </button>
+          </div>
+        </h6>
       </div>
     );
   }
