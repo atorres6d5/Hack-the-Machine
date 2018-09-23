@@ -6,15 +6,13 @@ import registerServiceWorker from './registerServiceWorker';
 import rootReducers from "./reducers"
 import ReduxThunk from 'redux-thunk'
 import { createStore, applyMiddleware, compose } from 'redux'
-import { createBrowserHistory } from 'history'
-import { connectRouter, routerMiddleware } from 'connected-react-router'
-const history = createBrowserHistory()
+import  createHistory  from 'history/createBrowserHistory'
+import { connectRouter, routerMiddleware } from 'react-router-redux'
+import reducers from './reducers';
 
-const store = createStore(
-  connectRouter(history)(rootReducers), {}, compose(
-    applyMiddleware( routerMiddleware(history), ReduxThunk)
-  )
-)
+const history = createHistory()
+
+const store = createStore(reducers, {}, applyMiddleware(ReduxThunk, routerMiddleware(history)))
 
 ReactDOM.render(<Root store={store} history={history} />, document.getElementById('root'));
 registerServiceWorker();
