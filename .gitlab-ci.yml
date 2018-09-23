@@ -1,0 +1,32 @@
+stages:
+  - build
+  - test
+  - deploy
+
+services:
+  - name: docker:dind
+    command:
+      - --insecure-registry=10.194.91.98:443
+
+variables:
+  CONTAINER_IMAGE: 10.194.91.98:443/adminteam2/htmapp
+  DOCKER_DRIVER: overlay2
+  STACK_NAME: t2
+
+build:
+  stage: build
+  image: docker
+  script:
+    - docker login -u gitlab-dtr -p eb8db761-1535-46d4-a5b6-fb23cc039b0f 10.194.91.98:443
+    - docker build --cache-from $CONTAINER_IMAGE:latest --tag $CONTAINER_IMAGE:$CI_COMMIT_SHA --tag $CONTAINER_IMAGE:latest .
+    - docker push $CONTAINER_IMAGE:$CI_COMMIT_SHA
+    - docker push $CONTAINER_IMAGE:latest
+  tags:
+    - dockeree
+
+trigger_build:
+  stage: deploy
+  script:
+    - "curl -X POST -F token=94f4c33764773e279ef7e831d2d67f -F ref=$CI_COMMIT_REF_NAME http://10.194.91.71/api/v4/projects/37/trigger/pipeline"
+  tags:
+    - deploylink
