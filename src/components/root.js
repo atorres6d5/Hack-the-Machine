@@ -1,30 +1,12 @@
 import React from 'react';
 import App from '../App.js';
-import Dispatch from '../containers/Dispatch/Dispatch';
+import Responders from './responders';
 import { Provider } from 'react-redux';
-import { Route, Switch, Redirect } from 'react-router';
+//import { Route, Switch, Redirect } from 'react-router'
 import PropTypes from 'prop-types';
+import Dispatch from '../containers/Dispatch/Dispatch';
 import { ConnectedRouter } from 'connected-react-router';
-
-const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={props =>
-      localStorage.getItem('Token') ? (
-        <Component {...props} />
-      ) : (
-        <Redirect
-          to={{
-            pathname: '/',
-            state: {
-              from: props.location
-            }
-          }}
-        />
-      )
-    }
-  />
-);
+import { Route, Switch } from 'react-router-dom';
 
 const Root = ({ store, history }) => {
   return (
@@ -32,7 +14,9 @@ const Root = ({ store, history }) => {
       <ConnectedRouter history={history}>
         <div>
           <Switch>
-            <Route path="/Dispatch" component={Dispatch} />
+            <Route exact path="/Dispatch" component={Dispatch} />
+            <Route exact path="/Responders" component={Responders} />
+
             <Route path="/" component={App} />
           </Switch>
         </div>

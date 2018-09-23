@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
+import responderReducer from './responderReducer';
+import dispatchReducer from './dispatchReducer';
 
 export default combineReducers({
   routing: routerReducer,
-  homeReducer: require('./homeReducer.js'),
-  dispatchReducer: require('./dispatchReducer.js')
+  responderReducer: responderReducer,
+  dispatchReducer: dispatchReducer
 });

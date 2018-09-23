@@ -22,7 +22,6 @@ class Dispatch extends Component {
             <th>Category</th>
           </thead>
         </table>
-
         {/* First Responders */}
         <h3>First Responders</h3>
         <table class="ui sortable blue celled table">
