@@ -56,10 +56,11 @@ export default class help extends Component {
 
         <h6>
           <b className="help">Need help?</b>
-          The Military Navy Aldo portal provides access to Service-specific
-          news, resources, and social media tools with one simple click. To
-          locate policies, procedures, timely articles, cutting edge social
-          media tools, and support, explore Military Navy Aldo.
+          Connecting with confidential help as a service dispatcher is simple
+          with Military ALDO. You can recieve help anytime, 24/7. You can
+          recieve direct help via either our live chat room or toll free phone
+          number by clicking the "Contact" button below. You can also click on
+          About in the menu to learn more about ALDO.
           <div className="btnpad">
             <button size="massive" class="ui black button">
               <h8> Contact </h8>
